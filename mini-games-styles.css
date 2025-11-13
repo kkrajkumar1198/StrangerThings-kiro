@@ -1,0 +1,62 @@
+@import url('lab-styles.css');
+
+body {
+    background: linear-gradient(180deg, #0a0a1a 0%, #1a1a2e 50%, #0a0a1a 100%);
+}
+
+.games-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 2rem;
+}
+
+.games-title {
+    font-family: 'Benguiat', 'Bookman Old Style', 'Georgia', serif;
+    font-size: 5rem;
+    color: #00ffff;
+    text-transform: uppercase;
+    -webkit-text-stroke: 4px #000;
+    paint-order: stroke fill;
+    text-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+    margin-bottom: 1rem;
+}
+
+.games-subtitle {
+    font-size: 1.5rem;
+    color: #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-bottom: 3rem;
+}
+
+.coming-soon {
+    font-size: 2rem;
+    color: rgba(0, 255, 255, 0.6);
+    margin-bottom: 3rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.back-button {
+    padding: 1rem 2rem;
+    background: rgba(0, 255, 255, 0.2);
+    border: 2px solid #00ffff;
+    color: #00ffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: rgba(0, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}

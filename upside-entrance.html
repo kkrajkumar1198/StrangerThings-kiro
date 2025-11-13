@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrance | Upside Down</title>
+    <link rel="stylesheet" href="upside-entrance-styles.css">
+    <link rel="stylesheet" href="mobile-responsive.css">
+</head>
+<body>
+    <div class="entrance-container">
+        <!-- Fog layers -->
+        <div class="fog-layer fog-1"></div>
+        <div class="fog-layer fog-2"></div>
+        
+        <!-- Portal effect -->
+        <div class="portal-ripple"></div>
+        
+        <!-- Content -->
+        <div class="entrance-content">
+            <h1 class="entrance-title">THE ENTRANCE</h1>
+            <p class="entrance-subtitle">Reality is bending...</p>
+            
+            <div class="tuning-panel">
+                <p class="instruction">Tune the frequency to unlock passage</p>
+                <div class="frequency-display">
+                    <span class="freq-value">0.0</span> Hz
+                </div>
+                
+                <div class="dial-container">
+                    <div class="dial" id="frequency-dial">
+                        <div class="dial-indicator"></div>
+                    </div>
+                    <p class="dial-label">Drag to tune</p>
+                </div>
+                
+                <div class="harmonics-display">
+                    <div class="harmonic-bar" id="bar1"></div>
+                    <div class="harmonic-bar" id="bar2"></div>
+                    <div class="harmonic-bar" id="bar3"></div>
+                </div>
+                
+                <p class="status-text" id="status-text">Searching for signal...</p>
+            </div>
+            
+            <div class="mysterious-objects">
+                <div class="object-item" data-message="Will's bike... left behind in the woods">
+                    <span class="object-icon">🚲</span>
+                    <span class="object-label">Lost Bike</span>
+                </div>
+                <div class="object-item" data-message="Floating debris from another dimension">
+                    <span class="object-icon">🌫️</span>
+                    <span class="object-label">Debris</span>
+                </div>
+                <div class="object-item" data-message="RUN... the message still echoes">
+                    <span class="object-icon">💡</span>
+                    <span class="object-label">Christmas Lights</span>
+                </div>
+            </div>
+            
+            <div class="message-box" id="message-box"></div>
+        </div>
+        
+        <a href="upside-down.html" class="back-button">← Back</a>
+    </div>
+
+    <button id="audio-toggle" class="audio-toggle" aria-label="Toggle sound">
+        <span class="audio-icon">♪</span>
+    </button>
+
+    <script src="upside-entrance-script.js"></script>
+</body>
+</html>

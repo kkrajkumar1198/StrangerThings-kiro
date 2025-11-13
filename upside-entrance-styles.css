@@ -1,0 +1,398 @@
+@import url('lab-styles.css');
+
+* {
+    cursor: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a0a;
+    overflow-x: hidden;
+    font-family: 'Courier New', monospace;
+}
+
+.entrance-container {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #0d1117 0%, #1a1f2e 50%, #0d1117 100%);
+    padding: 2rem;
+    overflow: hidden;
+}
+
+/* Animated fog layers */
+.fog-layer {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.fog-1 {
+    background: radial-gradient(ellipse at 30% 40%, rgba(139, 0, 255, 0.1) 0%, transparent 50%);
+    animation: fog-drift-1 20s ease-in-out infinite;
+}
+
+.fog-2 {
+    background: radial-gradient(ellipse at 70% 60%, rgba(100, 120, 140, 0.08) 0%, transparent 50%);
+    animation: fog-drift-2 25s ease-in-out infinite;
+}
+
+@keyframes fog-drift-1 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-5%, -5%) rotate(5deg); }
+}
+
+@keyframes fog-drift-2 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(5%, 5%) rotate(-5deg); }
+}
+
+/* Portal ripple effect */
+.portal-ripple {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgba(139, 0, 255, 0.3);
+    border-radius: 50%;
+    animation: ripple 3s ease-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes ripple {
+    0% {
+        width: 300px;
+        height: 300px;
+        opacity: 1;
+    }
+    100% {
+        width: 600px;
+        height: 600px;
+        opacity: 0;
+    }
+}
+
+.entrance-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.entrance-title {
+    font-family: 'Benguiat', 'Bookman Old Style', 'Georgia', serif;
+    font-size: 4rem;
+    color: #8b00ff;
+    text-transform: uppercase;
+    text-shadow: 0 0 40px rgba(139, 0, 255, 0.8);
+    margin-bottom: 0.5rem;
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { text-shadow: 0 0 40px rgba(139, 0, 255, 0.8); }
+    50% { text-shadow: 0 0 60px rgba(139, 0, 255, 1); }
+}
+
+.entrance-subtitle {
+    font-size: 1.2rem;
+    color: rgba(139, 0, 255, 0.8);
+    margin-bottom: 3rem;
+}
+
+/* Tuning panel */
+.tuning-panel {
+    background: rgba(139, 0, 255, 0.05);
+    border: 2px solid rgba(139, 0, 255, 0.3);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    animation: border-pulse 2s ease-in-out infinite;
+}
+
+@keyframes border-pulse {
+    0%, 100% { border-color: rgba(139, 0, 255, 0.3); }
+    50% { border-color: rgba(139, 0, 255, 0.6); }
+}
+
+.instruction {
+    font-size: 1.2rem;
+    color: #8b00ff;
+    margin-bottom: 1rem;
+}
+
+.frequency-display {
+    font-size: 2rem;
+    color: #8b00ff;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.dial-container {
+    margin: 2rem auto;
+}
+
+.dial {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 0, 255, 0.2), rgba(0, 0, 0, 0.8));
+    border: 3px solid #8b00ff;
+    position: relative;
+    margin: 0 auto 1rem;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.dial-indicator {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 4px;
+    height: 60px;
+    background: #8b00ff;
+    transform-origin: bottom center;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(139, 0, 255, 0.8);
+}
+
+.dial-label {
+    font-size: 0.9rem;
+    color: rgba(139, 0, 255, 0.7);
+}
+
+.harmonics-display {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.harmonic-bar {
+    width: 60px;
+    height: 100px;
+    background: rgba(139, 0, 255, 0.2);
+    border: 2px solid rgba(139, 0, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.harmonic-bar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #8b00ff;
+    transition: height 0.3s ease;
+    box-shadow: 0 0 20px rgba(139, 0, 255, 0.8);
+}
+
+.status-text {
+    font-size: 1.1rem;
+    color: rgba(139, 0, 255, 0.8);
+    min-height: 30px;
+}
+
+.status-text.success {
+    color: #00ff00;
+    animation: flash 0.5s;
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Mysterious objects */
+.mysterious-objects {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.object-item {
+    background: rgba(139, 0, 255, 0.1);
+    border: 2px solid rgba(139, 0, 255, 0.3);
+    padding: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+.object-item:hover {
+    border-color: #8b00ff;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(139, 0, 255, 0.5);
+}
+
+.object-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.object-label {
+    font-size: 0.9rem;
+    color: rgba(139, 0, 255, 0.8);
+    text-transform: uppercase;
+}
+
+.message-box {
+    background: rgba(139, 0, 255, 0.1);
+    border: 2px solid rgba(139, 0, 255, 0.4);
+    padding: 1.5rem;
+    border-radius: 10px;
+    min-height: 60px;
+    color: #8b00ff;
+    font-style: italic;
+    display: none;
+}
+
+.message-box.show {
+    display: block;
+    animation: fade-in 0.5s;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background: rgba(139, 0, 255, 0.2);
+    border: 2px solid #8b00ff;
+    color: #8b00ff;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background: rgba(139, 0, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* Custom cursor */
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 0, 255, 1) 0%, rgba(139, 0, 255, 0.8) 40%, transparent 70%);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(139, 0, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+    .entrance-container {
+        padding: 1rem;
+    }
+    
+    .entrance-title {
+        font-size: 2.5rem;
+    }
+    
+    .entrance-subtitle {
+        font-size: 1rem;
+    }
+    
+    .frequency-display {
+        font-size: 2.5rem;
+    }
+    
+    .dial-container {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .frequency-dial {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .harmonic-bars {
+        gap: 1rem;
+    }
+    
+    .bar {
+        width: 40px;
+    }
+    
+    .mysterious-objects {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .object-item {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .entrance-title {
+        font-size: 2rem;
+    }
+    
+    .dial-container {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .frequency-dial {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+/* Audio toggle */
+.audio-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(139, 0, 255, 0.3);
+    border: 2px solid #8b00ff;
+    color: #8b00ff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.audio-toggle:hover {
+    background: rgba(139, 0, 255, 0.5);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(139, 0, 255, 0.8);
+}
+
+.audio-icon {
+    font-size: 1.8rem;
+    font-weight: bold;
+}

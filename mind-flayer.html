@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Flayer | Upside Down</title>
+    <link rel="stylesheet" href="mind-flayer-styles.css">
+    <link rel="stylesheet" href="mobile-responsive.css">
+</head>
+<body>
+    <!-- Tutorial Overlay -->
+    <div class="tutorial-overlay" id="tutorialOverlay">
+        <div class="tutorial-box">
+            <h2 class="tutorial-title">HOW TO SURVIVE THE MIND FLAYER</h2>
+            
+            <div class="tutorial-content">
+                <div class="tutorial-step">
+                    <span class="step-number">1</span>
+                    <div class="step-text">
+                        <h3>Read the Mind Flayer's Message</h3>
+                        <p>The Mind Flayer will show you visions and speak to your mind</p>
+                    </div>
+                </div>
+                
+                <div class="tutorial-step">
+                    <span class="step-number">2</span>
+                    <div class="step-text">
+                        <h3>Choose Your Response</h3>
+                        <p>Click one of the 3 buttons to decide how you react</p>
+                    </div>
+                </div>
+                
+                <div class="tutorial-step">
+                    <span class="step-number">3</span>
+                    <div class="step-text">
+                        <h3>Watch the Mental Connection Meter</h3>
+                        <p>Your choices will increase or decrease the connection</p>
+                    </div>
+                </div>
+                
+                <div class="tutorial-goal">
+                    <h3>🎯 YOUR GOAL:</h3>
+                    <div class="goal-options">
+                        <div class="goal-option win">
+                            <span class="goal-icon">✓</span>
+                            <p><strong>ESCAPE:</strong> Reduce connection to 0%</p>
+                        </div>
+                        <div class="goal-option lose">
+                            <span class="goal-icon">✗</span>
+                            <p><strong>CONSUMED:</strong> If connection reaches 100%</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tutorial-tips">
+                    <h4>💡 TIPS:</h4>
+                    <ul>
+                        <li>Resisting usually decreases connection</li>
+                        <li>Accepting or communicating may increase it</li>
+                        <li>Each choice leads to a new situation</li>
+                        <li>There are multiple paths to victory or defeat</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <button class="tutorial-btn" id="startBtn">START ENCOUNTER</button>
+            <button class="tutorial-skip" id="skipBtn">Skip Tutorial</button>
+        </div>
+    </div>
+
+    <div class="flayer-container">
+        <div class="fog-layer"></div>
+        <div class="shadow-layer"></div>
+        
+        <!-- Mind Flayer entity -->
+        <div class="mind-flayer" id="mindFlayer">
+            <div class="flayer-eye"></div>
+            <div class="flayer-tentacles">
+                <div class="tentacle"></div>
+                <div class="tentacle"></div>
+                <div class="tentacle"></div>
+                <div class="tentacle"></div>
+                <div class="tentacle"></div>
+            </div>
+        </div>
+        
+        <div class="content-wrapper">
+            <h1 class="flayer-title">MIND FLAYER</h1>
+            <p class="flayer-subtitle">The Shadow Monster</p>
+            
+            <div class="encounter-container">
+                <div class="instructions-box">
+                    <p class="instruction-text">⚠ Make choices to influence your mental connection with the Mind Flayer</p>
+                    <p class="instruction-subtext">Reach 100% = Consumed | Reach 0% = Escape</p>
+                </div>
+                
+                <div class="message-box" id="messageBox">
+                    <p id="messageText">The presence fills your mind. It speaks without words...</p>
+                </div>
+                
+                <div class="choices-container" id="choicesContainer">
+                    <button class="choice-btn" data-choice="resist">
+                        <span class="choice-icon">⚔</span>
+                        <span>Resist the Connection</span>
+                    </button>
+                    <button class="choice-btn" data-choice="communicate">
+                        <span class="choice-icon">◈</span>
+                        <span>Try to Communicate</span>
+                    </button>
+                    <button class="choice-btn" data-choice="flee">
+                        <span class="choice-icon">→</span>
+                        <span>Attempt to Flee</span>
+                    </button>
+                </div>
+                
+                <div class="connection-meter">
+                    <div class="meter-label">Mental Connection</div>
+                    <div class="meter-bar">
+                        <div class="meter-fill" id="meterFill"></div>
+                    </div>
+                    <div class="meter-percentage" id="meterPercentage">0%</div>
+                </div>
+            </div>
+            
+            <a href="upside-down.html" class="back-button" id="backButton">← Escape to Safety</a>
+        </div>
+    </div>
+
+    <button id="audio-toggle" class="audio-toggle" aria-label="Toggle sound">
+        <span class="audio-icon">♪</span>
+    </button>
+    
+    <script src="mind-flayer-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Hub | Upside Down</title>
+    <link rel="stylesheet" href="central-hub-styles.css">
+    <link rel="stylesheet" href="mobile-responsive.css">
+</head>
+<body>
+    <div class="hub-container">
+        <div class="fog-layer"></div>
+        
+        <div class="content-wrapper">
+            <div class="header-section">
+                <h1 class="hub-title">CENTRAL HUB</h1>
+                <p class="hub-subtitle">The Dark Mirror of Hawkins</p>
+                <div class="corruption-meter">
+                    <span class="meter-label">Dimensional Corruption</span>
+                    <div class="meter-bar">
+                        <div class="meter-progress" id="corruptionMeter"></div>
+                    </div>
+                    <span class="meter-value" id="corruptionValue">73%</span>
+                </div>
+            </div>
+            
+            <!-- Interactive 3D-style map -->
+            <div class="map-container">
+                <div class="map-background">
+                    <div class="grid-lines"></div>
+                </div>
+                
+                <svg class="hub-map" viewBox="0 0 800 600" id="hubMap">
+                    <!-- Animated particles -->
+                    <defs>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                        <radialGradient id="centerGradient">
+                            <stop offset="0%" style="stop-color:#8b00ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#4a0080;stop-opacity:0.5" />
+                        </radialGradient>
+                    </defs>
+                    
+                    <!-- Connecting tendrils with animation -->
+                    <path d="M 400 300 Q 300 200 200 150" class="tendril" id="tendril1"/>
+                    <path d="M 400 300 Q 500 200 600 150" class="tendril" id="tendril2"/>
+                    <path d="M 400 300 Q 300 400 200 450" class="tendril" id="tendril3"/>
+                    <path d="M 400 300 Q 500 400 600 450" class="tendril" id="tendril4"/>
+                    
+                    <!-- Central nexus -->
+                    <g class="hub-center" id="center">
+                        <circle cx="400" cy="300" r="50" fill="url(#centerGradient)" filter="url(#glow)"/>
+                        <circle cx="400" cy="300" r="40" fill="none" stroke="#8b00ff" stroke-width="2" opacity="0.6">
+                            <animate attributeName="r" from="40" to="55" dur="2s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" from="0.6" to="0" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="400" y="305" text-anchor="middle" class="center-text">NEXUS</text>
+                    </g>
+                    
+                    <!-- Location nodes with enhanced design -->
+                    <g class="location-node" data-location="wills-home">
+                        <circle cx="200" cy="150" r="25" class="node-outer"/>
+                        <circle cx="200" cy="150" r="18" class="node-inner"/>
+                        <text x="200" y="110" text-anchor="middle" class="node-label">BYERS HOUSE</text>
+                        <text x="200" y="125" text-anchor="middle" class="node-sublabel">◈</text>
+                    </g>
+                    
+                    <g class="location-node" data-location="laboratory">
+                        <circle cx="600" cy="150" r="25" class="node-outer"/>
+                        <circle cx="600" cy="150" r="18" class="node-inner"/>
+                        <text x="600" y="110" text-anchor="middle" class="node-label">LABORATORY</text>
+                        <text x="600" y="125" text-anchor="middle" class="node-sublabel">◆</text>
+                    </g>
+                    
+                    <g class="location-node" data-location="school">
+                        <circle cx="200" cy="450" r="25" class="node-outer"/>
+                        <circle cx="200" cy="450" r="18" class="node-inner"/>
+                        <text x="200" y="485" text-anchor="middle" class="node-label">HAWKINS MIDDLE</text>
+                        <text x="200" y="470" text-anchor="middle" class="node-sublabel">◇</text>
+                    </g>
+                    
+                    <g class="location-node" data-location="arcade">
+                        <circle cx="600" cy="450" r="25" class="node-outer"/>
+                        <circle cx="600" cy="450" r="18" class="node-inner"/>
+                        <text x="600" y="485" text-anchor="middle" class="node-label">PALACE ARCADE</text>
+                        <text x="600" y="470" text-anchor="middle" class="node-sublabel">◈</text>
+                    </g>
+                </svg>
+                
+                <!-- Enhanced location info panel -->
+                <div class="location-info" id="locationInfo">
+                    <div class="info-header">
+                        <div class="status-indicator" id="statusIndicator"></div>
+                        <h3 id="locationName">Select a Location</h3>
+                    </div>
+                    <div class="info-content">
+                        <p id="locationDesc">Click on any node to explore the twisted reflection of Hawkins.</p>
+                        <div class="location-stats" id="locationStats" style="display: none;">
+                            <div class="stat-item">
+                                <span class="stat-label">Danger Level:</span>
+                                <span class="stat-value" id="dangerLevel">—</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Corruption:</span>
+                                <span class="stat-value" id="corruptionLevel">—</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="visitBtn" class="visit-btn" style="display: none;">
+                        <span class="btn-icon">→</span>
+                        <span class="btn-text">Enter Location</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bottom-nav">
+                <a href="upside-down.html" class="back-button">
+                    <span class="btn-icon">←</span>
+                    <span>Back to Upside Down</span>
+                </a>
+                <div class="coordinates">
+                    <span class="coord-label">COORDINATES:</span>
+                    <span class="coord-value" id="coordinates">40.7128°N, 74.0060°W</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="audio-toggle" class="audio-toggle" aria-label="Toggle sound">
+        <span class="audio-icon">♪</span>
+    </button>
+    
+    <script src="central-hub-script.js"></script>
+</body>
+</html>

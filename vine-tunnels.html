@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vine Tunnels | Upside Down</title>
+    <link rel="stylesheet" href="vine-tunnels-styles.css">
+    <link rel="stylesheet" href="mobile-responsive.css">
+</head>
+<body>
+    <div class="tunnels-container">
+        <div class="fog-layer"></div>
+        <div class="vine-overlay"></div>
+        
+        <div class="content-wrapper">
+            <h1 class="tunnels-title">VINE TUNNELS</h1>
+            <p class="tunnels-subtitle">Navigate the Living Darkness</p>
+            
+            <div class="game-container">
+                <div class="instructions">
+                    <p>The vines pulse with life. Find the safe path through the tunnels.</p>
+                    <p>Click tiles to reveal the path. Avoid the corrupted vines.</p>
+                    <div class="stats">
+                        <span>Moves: <span id="moves">0</span></span>
+                        <span>Safe Tiles: <span id="safeTiles">0</span>/12</span>
+                    </div>
+                </div>
+                
+                <div class="maze-grid" id="mazeGrid"></div>
+                
+                <div class="game-status" id="gameStatus"></div>
+                
+                <button class="reset-btn" id="resetBtn">Reset Path</button>
+            </div>
+            
+            <a href="upside-down.html" class="back-button">← Back to Upside Down</a>
+        </div>
+    </div>
+
+    <button id="audio-toggle" class="audio-toggle" aria-label="Toggle sound">
+        <span class="audio-icon">♪</span>
+    </button>
+    
+    <script src="vine-tunnels-script.js"></script>
+</body>
+</html>

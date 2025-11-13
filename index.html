@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stranger Things | Welcome to Hawkins</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile-responsive.css">
+</head>
+<body class="landing-page">
+    <div class="lights-container">
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+    </div>
+
+    <header class="hero">
+        <!-- Lightning effect -->
+        <div class="lightning">
+            <svg viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg">
+                <!-- Main lightning bolt - outer red glow -->
+                <path d="M 750 0 
+                         L 222 38 L 228 41 
+                         L 218 82 L 224 85
+                         L 210 128 L 216 131
+                         L 198 178 L 204 181
+                         L 182 232 L 188 235
+                         L 160 292 L 166 295
+                         L 135 358 L 141 361
+                         L 105 432 L 111 435
+                         L 72 512 L 78 515
+                         L 42 598 L 48 601
+                         L 18 688 L 24 691
+                         L 5 780 L 11 783
+                         L 0 850" 
+                      stroke="rgba(255, 80, 80, 0.4)" 
+                      stroke-width="8" 
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"/>
+                
+                <!-- Main bolt - middle red layer -->
+                <path d="M 225 0 
+                         L 222 38 L 228 41 
+                         L 218 82 L 224 85
+                         L 210 128 L 216 131
+                         L 198 178 L 204 181
+                         L 182 232 L 188 235
+                         L 160 292 L 166 295
+                         L 135 358 L 141 361
+                         L 105 432 L 111 435
+                         L 72 512 L 78 515
+                         L 42 598 L 48 601
+                         L 18 688 L 24 691
+                         L 5 780 L 11 783
+                         L 0 850" 
+                      stroke="rgba(255, 120, 120, 0.8)" 
+                      stroke-width="4" 
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"/>
+                
+                <!-- Bright white core -->
+                <path d="M 225 0 
+                         L 222 38 L 228 41 
+                         L 218 82 L 224 85
+                         L 210 128 L 216 131
+                         L 198 178 L 204 181
+                         L 182 232 L 188 235
+                         L 160 292 L 166 295
+                         L 135 358 L 141 361
+                         L 105 432 L 111 435
+                         L 72 512 L 78 515
+                         L 42 598 L 48 601
+                         L 18 688 L 24 691
+                         L 5 780 L 11 783
+                         L 0 850" 
+                      stroke="rgba(255, 255, 255, 1)" 
+                      stroke-width="1.5" 
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"/>
+                
+                <!-- Branch 1 - upper left spreading wide -->
+                <path d="M 218 82 L 195 108 L 175 135 L 152 165 L 128 195 L 102 228 L 78 262" 
+                      stroke="rgba(255, 80, 80, 0.35)" 
+                      stroke-width="5" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                <path d="M 218 82 L 195 108 L 175 135 L 152 165 L 128 195 L 102 228 L 78 262" 
+                      stroke="rgba(255, 120, 120, 0.7)" 
+                      stroke-width="2.5" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                <path d="M 218 82 L 195 108 L 175 135 L 152 165 L 128 195 L 102 228 L 78 262" 
+                      stroke="rgba(255, 255, 255, 0.9)" 
+                      stroke-width="1" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                
+                <!-- Sub-branch 1a - spreading left -->
+                <path d="M 152 165 L 132 185 L 115 208 L 98 232 L 82 258" 
+                      stroke="rgba(255, 80, 80, 0.3)" 
+                      stroke-width="3" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                <path d="M 152 165 L 132 185 L 115 208 L 98 232 L 82 258" 
+                      stroke="rgba(255, 150, 150, 0.8)" 
+                      stroke-width="1" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                
+                <!-- Sub-branch 1b - tiny splits -->
+                <path d="M 128 195 L 112 212 L 98 228 L 85 245" 
+                      stroke="rgba(255, 80, 80, 0.25)" 
+                      stroke-width="2" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                <path d="M 175 135 L 158 152 L 142 168" 
+                      stroke="rgba(255, 80, 80, 0.25)" 
+                      stroke-width="2" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                
+                <!-- Branch 2 - middle right spreading wide -->
+                <path d="M 182 232 L 208 268 L 235 305 L 265 345 L 295 385 L 325 428 L 355 472" 
+                      stroke="rgba(255, 80, 80, 0.35)" 
+                      stroke-width="5" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                <path d="M 182 232 L 208 268 L 235 305 L 265 345 L 295 385 L 325 428 L 355 472" 
+                      stroke="rgba(255, 120, 120, 0.7)" 
+                      stroke-width="2.5" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                <path d="M 182 232 L 208 268 L 235 305 L 265 345 L 295 385 L 325 428 L 355 472" 
+                      stroke="rgba(255, 255, 255, 0.9)" 
+                      stroke-width="1" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                
+                <!-- Sub-branch 2a - spreading right -->
+                <path d="M 265 345 L 288 372 L 312 398 L 338 425 L 365 452" 
+                      stroke="rgba(255, 80, 80, 0.3)" 
+                      stroke-width="3" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                <path d="M 265 345 L 288 372 L 312 398 L 338 425 L 365 452" 
+                      stroke="rgba(255, 150, 150, 0.8)" 
+                      stroke-width="1" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                
+                <!-- Sub-branch 2b -->
+                <path d="M 295 385 L 318 408 L 342 432" 
+                      stroke="rgba(255, 80, 80, 0.25)" 
+                      stroke-width="2" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                <path d="M 235 305 L 258 328 L 278 348" 
+                      stroke="rgba(255, 80, 80, 0.25)" 
+                      stroke-width="2" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                
+                <!-- Branch 3 - lower left wide spread -->
+                <path d="M 105 432 L 82 468 L 58 505 L 32 545 L 8 588 L 0 625" 
+                      stroke="rgba(255, 80, 80, 0.3)" 
+                      stroke-width="4" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                <path d="M 105 432 L 82 468 L 58 505 L 32 545 L 8 588 L 0 625" 
+                      stroke="rgba(255, 120, 120, 0.7)" 
+                      stroke-width="2" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                
+                <!-- Branch 4 - mid left -->
+                <path d="M 135 358 L 112 388 L 88 418 L 65 452 L 42 488" 
+                      stroke="rgba(255, 80, 80, 0.3)" 
+                      stroke-width="4" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                <path d="M 135 358 L 112 388 L 88 418 L 65 452 L 42 488" 
+                      stroke="rgba(255, 120, 120, 0.7)" 
+                      stroke-width="2" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                
+                <!-- Small branches spreading -->
+                <path d="M 160 292 L 142 318 L 125 345 L 108 372" 
+                      stroke="rgba(255, 100, 100, 0.5)" 
+                      stroke-width="2" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                
+                <path d="M 72 512 L 92 545 L 112 578 L 128 608" 
+                      stroke="rgba(255, 100, 100, 0.5)" 
+                      stroke-width="2" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                
+                <path d="M 198 178 L 218 208 L 238 238 L 255 265" 
+                      stroke="rgba(255, 100, 100, 0.5)" 
+                      stroke-width="2" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                
+                <!-- Tiny far-reaching branches -->
+                <path d="M 58 505 L 42 528 L 28 552" 
+                      stroke="rgba(255, 80, 80, 0.4)" 
+                      stroke-width="1.5" 
+                      fill="none"
+                      stroke-linecap="round"/>
+                
+                <path d="M 325 428 L 348 452 L 372 478" 
+                      stroke="rgba(255, 80, 80, 0.4)" 
+                      stroke-width="1.5" 
+                      fill="none"
+                      stroke-linecap="round"/>
+            </svg>
+        </div>
+        <div class="hero-content">
+            <div class="logo">
+                <div class="logo-line"></div>
+                <h1 class="glitch">
+                    <span class="logo-top">STRANGER</span>
+                    <span class="logo-bottom">THINGS</span>
+                </h1>
+                <div class="logo-line"></div>
+            </div>
+            <p class="tagline">Welcome to Hawkins, Indiana</p>
+        </div>
+    </header>
+
+
+
+    <!-- Audio toggle button -->
+    <button id="audio-toggle" class="audio-toggle" aria-label="Toggle sound">
+        🔊
+    </button>
+
+    <!-- Background audio -->
+    <audio id="bg-audio" autoplay loop>
+        <source src="Stranger%20Things.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

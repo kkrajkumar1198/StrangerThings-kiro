@@ -1,0 +1,392 @@
+@font-face {
+    font-family: 'Benguiat';
+    src: url('https://cdn.jsdelivr.net/gh/mattboldt/typed.js@master/fonts/BenguiatStd-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #0a0a0a;
+    color: #fff;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.menu-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-section {
+    width: 25%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-right: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-section:last-child {
+    border-right: none;
+}
+
+.menu-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.menu-section:hover::before {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.menu-section:hover {
+    width: 30%;
+}
+
+.section-content {
+    text-align: center;
+    z-index: 2;
+    transform: scale(1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.menu-section:hover .section-content {
+    transform: scale(1.1);
+}
+
+.section-icon {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Laboratory Icon - Microscope */
+.lab-icon {
+    background: 
+        linear-gradient(90deg, transparent 48%, #00ff00 48%, #00ff00 52%, transparent 52%),
+        radial-gradient(circle at 50% 30%, #00ff00 15px, transparent 15px),
+        radial-gradient(circle at 50% 30%, rgba(0, 255, 0, 0.3) 25px, transparent 25px),
+        linear-gradient(180deg, transparent 40%, #00ff00 40%, #00ff00 45%, transparent 45%),
+        linear-gradient(180deg, transparent 70%, #00ff00 70%, #00ff00 100%);
+    filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.6));
+}
+
+/* Upside Down Icon - Portal/Rift */
+.upside-icon {
+    background: 
+        radial-gradient(ellipse at center, transparent 30%, #8b00ff 30%, #8b00ff 35%, transparent 35%),
+        radial-gradient(ellipse at center, transparent 45%, #8b00ff 45%, #8b00ff 48%, transparent 48%),
+        radial-gradient(ellipse at center, rgba(139, 0, 255, 0.3) 60%, transparent 60%);
+    position: relative;
+    filter: drop-shadow(0 0 15px rgba(139, 0, 255, 0.8));
+    animation: float 3s ease-in-out infinite, pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Home Icon - House */
+.home-icon {
+    background: 
+        linear-gradient(135deg, transparent 45%, #ffaa00 45%, #ffaa00 55%, transparent 55%),
+        linear-gradient(45deg, transparent 45%, #ffaa00 45%, #ffaa00 55%, transparent 55%),
+        linear-gradient(180deg, transparent 50%, #ffaa00 50%, #ffaa00 52%, transparent 52%),
+        linear-gradient(180deg, transparent 50%, #ffaa00 50%, #ffaa00 100%);
+    background-size: 100% 50%, 100% 50%, 60% 50%, 60% 50%;
+    background-position: center top, center top, center 50%, center 50%;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 10px rgba(255, 170, 0, 0.6));
+}
+
+/* Games Icon - Arcade Controller */
+.games-icon {
+    background: 
+        linear-gradient(90deg, transparent 20%, #00ffff 20%, #00ffff 80%, transparent 80%),
+        radial-gradient(circle at 35% 50%, #00ffff 8px, transparent 8px),
+        radial-gradient(circle at 65% 50%, #00ffff 8px, transparent 8px),
+        linear-gradient(180deg, transparent 30%, rgba(0, 255, 255, 0.3) 30%, rgba(0, 255, 255, 0.3) 70%, transparent 70%);
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.6));
+}
+
+.section-title {
+    font-family: 'Benguiat', 'Bookman Old Style', 'Georgia', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+    -webkit-text-stroke: 3px #000;
+    paint-order: stroke fill;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.9;
+}
+
+/* Section 1: Laboratory - Green theme */
+.lab-section {
+    background: linear-gradient(90deg, #0a1a0a 0%, #0f2e0f 50%, #0a1a0a 100%);
+}
+
+.lab-section .section-title {
+    color: #00ff00;
+    text-shadow: 
+        4px 4px 0 #000,
+        0 0 20px rgba(0, 255, 0, 0.8),
+        0 0 40px rgba(0, 255, 0, 0.5);
+}
+
+.lab-section .section-subtitle {
+    color: #00ff00;
+    text-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+}
+
+/* Section 2: Upside Down - Purple theme */
+.upside-section {
+    background: linear-gradient(90deg, #1a0a1a 0%, #2e1a2e 50%, #1a0a1a 100%);
+}
+
+.upside-section .section-title {
+    color: #8b00ff;
+    text-shadow: 
+        4px 4px 0 #000,
+        0 0 20px rgba(139, 0, 255, 0.8),
+        0 0 40px rgba(139, 0, 255, 0.5);
+}
+
+.upside-section .section-subtitle {
+    color: #8b00ff;
+    text-shadow: 0 0 15px rgba(139, 0, 255, 0.6);
+}
+
+/* Section 3: Will's Home - Orange/Yellow theme */
+.home-section {
+    background: linear-gradient(90deg, #1a1a0a 0%, #2e2e1a 50%, #1a1a0a 100%);
+}
+
+.home-section .section-title {
+    color: #ffaa00;
+    text-shadow: 
+        4px 4px 0 #000,
+        0 0 20px rgba(255, 170, 0, 0.8),
+        0 0 40px rgba(255, 170, 0, 0.5);
+}
+
+.home-section .section-subtitle {
+    color: #ffaa00;
+    text-shadow: 0 0 15px rgba(255, 170, 0, 0.6);
+}
+
+/* Section 4: Vecna - Red/Dark theme */
+.vecna-section {
+    background: linear-gradient(90deg, #1a0000 0%, #2e0a0a 50%, #1a0000 100%);
+}
+
+.vecna-section .section-title {
+    color: #8b0000;
+    text-shadow: 
+        4px 4px 0 #000,
+        0 0 20px rgba(139, 0, 0, 0.8),
+        0 0 40px rgba(139, 0, 0, 0.5);
+    animation: vecna-glitch 3s ease-in-out infinite;
+}
+
+@keyframes vecna-glitch {
+    0%, 90%, 100% { 
+        transform: translateX(0);
+    }
+    92% { 
+        transform: translateX(-3px);
+        text-shadow: -3px 0 rgba(255, 0, 0, 0.8), 3px 0 rgba(0, 255, 255, 0.8);
+    }
+    94% { 
+        transform: translateX(3px);
+        text-shadow: 3px 0 rgba(255, 0, 0, 0.8), -3px 0 rgba(0, 255, 255, 0.8);
+    }
+}
+
+.vecna-section .section-subtitle {
+    color: #ff0000;
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+}
+
+/* Vecna Icon - Skull/Eye */
+.vecna-icon {
+    background: 
+        radial-gradient(circle at 50% 40%, #8b0000 12px, transparent 12px),
+        radial-gradient(circle at 50% 40%, rgba(139, 0, 0, 0.5) 20px, transparent 20px),
+        radial-gradient(ellipse at 35% 35%, #8b0000 6px, transparent 6px),
+        radial-gradient(ellipse at 65% 35%, #8b0000 6px, transparent 6px),
+        linear-gradient(180deg, transparent 55%, #8b0000 55%, #8b0000 58%, transparent 58%);
+    filter: drop-shadow(0 0 15px rgba(139, 0, 0, 0.8));
+    animation: float 3s ease-in-out infinite, vecna-pulse 2s ease-in-out infinite;
+}
+
+@keyframes vecna-pulse {
+    0%, 100% {
+        opacity: 1;
+        filter: drop-shadow(0 0 15px rgba(139, 0, 0, 0.8));
+    }
+    50% {
+        opacity: 0.8;
+        filter: drop-shadow(0 0 25px rgba(255, 0, 0, 1));
+    }
+}
+
+/* Audio toggle button */
+.audio-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(227, 8, 19, 0.8);
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.audio-toggle:hover {
+    background: rgba(227, 8, 19, 1);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(227, 8, 19, 0.8);
+}
+
+.audio-toggle.muted {
+    opacity: 0.5;
+}
+
+/* Custom red glowing cursor */
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(227, 8, 19, 1) 0%, rgba(227, 8, 19, 0.8) 40%, transparent 70%);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    box-shadow: 
+        0 0 10px rgba(227, 8, 19, 0.8),
+        0 0 20px rgba(227, 8, 19, 0.6),
+        0 0 30px rgba(227, 8, 19, 0.4);
+    animation: cursor-pulse 2s ease-in-out infinite;
+}
+
+@keyframes cursor-pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+.cursor-trail {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(227, 8, 19, 0.5);
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    animation: trail-fade 0.5s ease-out forwards;
+}
+
+@keyframes trail-fade {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-container {
+        flex-direction: column;
+    }
+    
+    .menu-section {
+        width: 100%;
+        height: 25vh;
+        border-right: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .menu-section:hover {
+        width: 100%;
+        height: 30vh;
+    }
+    
+    .section-title {
+        writing-mode: horizontal-tb;
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        writing-mode: horizontal-tb;
+        font-size: 0.9rem;
+    }
+    
+    .section-icon {
+        font-size: 3rem;
+    }
+}

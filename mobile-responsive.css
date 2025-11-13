@@ -1,0 +1,184 @@
+/* Mobile Responsive Enhancements for All Pages */
+
+/* Global Mobile Styles */
+@media (max-width: 768px) {
+    /* Remove tap highlights */
+    * {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+    }
+    
+    /* Allow text selection for content */
+    p, .memory-text, .instruction-text, .story-text {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+    }
+    
+    /* Disable custom cursors on mobile */
+    body::after {
+        display: none !important;
+    }
+    
+    body {
+        cursor: auto !important;
+        overflow-x: hidden;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    /* Ensure minimum touch target size (44x44px) */
+    button, 
+    .choice-btn, 
+    .control-btn, 
+    .visit-btn, 
+    .keyboard-key, 
+    .pattern-card,
+    .start-btn,
+    .menu-btn {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    /* Audio toggles consistent across all pages */
+    .audio-toggle {
+        bottom: 1rem !important;
+        right: 1rem !important;
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 1.2rem !important;
+        z-index: 1000;
+    }
+    
+    /* Back buttons consistent */
+    .back-button, 
+    .escape-btn {
+        padding: 0.8rem 1.5rem !important;
+        font-size: 0.9rem !important;
+        margin-top: 2rem;
+    }
+    
+    /* Better spacing for mobile */
+    section {
+        padding: 2rem 1rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .content-wrapper {
+        padding: 1.5rem 1rem !important;
+        max-width: 100%;
+    }
+    
+    /* Typography adjustments */
+    h1 {
+        font-size: 2.5rem !important;
+        margin-bottom: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem !important;
+    }
+    
+    /* Choice buttons */
+    .choices {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .choice-btn {
+        width: 100% !important;
+        max-width: 100%;
+        font-size: 1rem;
+    }
+    
+    /* Game controls */
+    .controls {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .control-btn {
+        width: 100%;
+        font-size: 1rem;
+    }
+    
+    /* Images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Containers */
+    .container {
+        padding: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* Small Mobile (iPhone SE, etc.) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    /* Reduce font sizes further */
+    h1 {
+        font-size: 2rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    h3 {
+        font-size: 1.2rem !important;
+    }
+    
+    /* Tighter spacing */
+    section {
+        padding: 1.5rem 0.8rem !important;
+    }
+    
+    .content-wrapper {
+        padding: 1rem 0.8rem !important;
+    }
+    
+    /* Smaller buttons on very small screens */
+    button,
+    .choice-btn,
+    .control-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .audio-toggle {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 1rem !important;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    body {
+        font-size: 14px;
+    }
+    
+    h1 {
+        font-size: 2rem !important;
+    }
+    
+    section {
+        padding: 1rem !important;
+    }
+}

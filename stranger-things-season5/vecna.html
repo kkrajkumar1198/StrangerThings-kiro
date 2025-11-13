@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vecna's Domain | Stranger Things</title>
+    <link rel="stylesheet" href="vecna-styles.css">
+</head>
+<body>
+    <!-- Entry transition overlay -->
+    <div class="entry-overlay" id="entryOverlay">
+        <div class="pull-effect">
+            <h1 class="entry-text">YOU ARE BEING PULLED IN...</h1>
+            <div class="distortion-lines"></div>
+        </div>
+    </div>
+
+    <!-- Vecna's eye/hand focal point -->
+    <div class="vecna-presence" id="vecnaPresence">
+        <div class="vecna-eye"></div>
+        <div class="vecna-hand">
+            <div class="finger"></div>
+            <div class="finger"></div>
+            <div class="finger"></div>
+            <div class="finger"></div>
+            <div class="finger"></div>
+        </div>
+    </div>
+
+    <!-- Cracks overlay -->
+    <svg class="cracks-overlay" id="cracksOverlay">
+        <path class="crack" d="M 0 0" id="crack1"/>
+        <path class="crack" d="M 0 0" id="crack2"/>
+        <path class="crack" d="M 0 0" id="crack3"/>
+    </svg>
+
+    <!-- Veins overlay -->
+    <div class="veins-overlay"></div>
+
+    <!-- Main container -->
+    <div class="vecna-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="vecna-title">VECNA'S DOMAIN</h1>
+            <p class="vecna-subtitle">The Mind Behind the Horror</p>
+            <div class="warning-text">⚠ Your darkest memories are not safe here ⚠</div>
+        </section>
+
+        <!-- Victims' Memories Gallery -->
+        <section class="memories-section" id="memoriesSection">
+            <h2 class="section-title">VICTIMS' MEMORIES</h2>
+            <p class="section-desc">Hover to reveal their darkest moments...</p>
+            
+            <div class="memories-grid">
+                <div class="memory-card" data-victim="chrissy">
+                    <div class="memory-front">
+                        <img src="chrissy.jpeg" alt="Chrissy Cunningham" class="victim-photo">
+                        <p class="victim-name">Chrissy Cunningham</p>
+                    </div>
+                    <div class="memory-back">
+                        <p class="memory-text">"You're a disappointment... You'll never be good enough..."</p>
+                        <audio class="memory-audio" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3"></audio>
+                    </div>
+                </div>
+
+                <div class="memory-card" data-victim="fred">
+                    <div class="memory-front">
+                        <img src="fred.jpeg" alt="Fred Benson" class="victim-photo">
+                        <p class="victim-name">Fred Benson</p>
+                    </div>
+                    <div class="memory-back">
+                        <p class="memory-text">"It was your fault... You killed him... You can't escape the guilt..."</p>
+                    </div>
+                </div>
+
+                <div class="memory-card" data-victim="patrick">
+                    <div class="memory-front">
+                        <img src="patrick.jpeg" alt="Patrick McKinney" class="victim-photo">
+                        <p class="victim-name">Patrick McKinney</p>
+                    </div>
+                    <div class="memory-back">
+                        <p class="memory-text">"The pain never stops... You're trapped in this nightmare forever..."</p>
+                    </div>
+                </div>
+
+                <div class="memory-card" data-victim="max">
+                    <div class="memory-front">
+                        <img src="max.jpeg" alt="Max Mayfield" class="victim-photo">
+                        <p class="victim-name">Max Mayfield</p>
+                    </div>
+                    <div class="memory-back">
+                        <p class="memory-text">"Billy's death was your fault... You wished him dead... You're a monster..."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sinister Choice -->
+        <section class="choice-section" id="choiceSection">
+            <h2 class="section-title glitch">COMPLETE THE VISION</h2>
+            <p class="section-desc">Choose your fate... or let Vecna choose for you</p>
+            
+            <div class="vision-puzzle" id="visionPuzzle">
+                <p class="puzzle-question" id="puzzleQuestion">What is your greatest fear?</p>
+                <div class="choice-buttons">
+                    <button class="choice-btn" data-choice="1">Being Forgotten</button>
+                    <button class="choice-btn" data-choice="2">Losing Control</button>
+                    <button class="choice-btn" data-choice="3">Eternal Isolation</button>
+                    <button class="choice-btn" data-choice="4">Facing Your Past</button>
+                </div>
+                <p class="choice-result" id="choiceResult"></p>
+            </div>
+        </section>
+
+        <!-- Origins Panel -->
+        <section class="origins-section" id="originsSection">
+            <h2 class="section-title">THE TRANSFORMATION</h2>
+            <p class="section-desc">From Henry Creel to Vecna</p>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-stage="henry">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h3>Henry Creel</h3>
+                        <p>A boy with dark powers, misunderstood and feared by his own family.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-stage="one">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h3>Subject One</h3>
+                        <p>Captured by Dr. Brenner, the first test subject. The source of Eleven's powers.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-stage="banished">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h3>The Banishment</h3>
+                        <p>Cast into the Upside Down by Eleven, his body twisted and burned.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-stage="vecna">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h3>Vecna</h3>
+                        <p>Reborn as a monster, the master of the Upside Down, feeding on trauma and fear.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hive Connection -->
+        <section class="hive-section" id="hiveSection">
+            <h2 class="section-title">PSYCHIC HIVE MIND</h2>
+            <p class="section-desc">Tap into Vecna's network of control</p>
+            
+            <div class="hive-diagram">
+                <div class="hive-center" id="hiveCenter">
+                    <span>VECNA</span>
+                </div>
+                
+                <div class="hive-node" data-node="mindflayer" style="top: 20%; left: 50%;">
+                    <div class="node-icon">◉</div>
+                    <div class="node-info">
+                        <h4>Mind Flayer</h4>
+                        <p>The shadow entity, Vecna's primary weapon of mass destruction.</p>
+                    </div>
+                </div>
+
+                <div class="hive-node" data-node="demogorgons" style="top: 50%; left: 15%;">
+                    <div class="node-icon">✦</div>
+                    <div class="node-info">
+                        <h4>Demogorgons</h4>
+                        <p>Predatory creatures controlled through the hive mind.</p>
+                    </div>
+                </div>
+
+                <div class="hive-node" data-node="vines" style="top: 50%; right: 15%;">
+                    <div class="node-icon">❋</div>
+                    <div class="node-info">
+                        <h4>Vine Network</h4>
+                        <p>Living tendrils that spread corruption throughout dimensions.</p>
+                    </div>
+                </div>
+
+                <div class="hive-node" data-node="gates" style="bottom: 20%; left: 50%;">
+                    <div class="node-icon">◈</div>
+                    <div class="node-info">
+                        <h4>The Gates</h4>
+                        <p>Rifts between worlds, opened by Vecna's kills.</p>
+                    </div>
+                </div>
+
+                <svg class="connection-lines">
+                    <line x1="50%" y1="50%" x2="50%" y2="20%" class="hive-line"/>
+                    <line x1="50%" y1="50%" x2="15%" y2="50%" class="hive-line"/>
+                    <line x1="50%" y1="50%" x2="85%" y2="50%" class="hive-line"/>
+                    <line x1="50%" y1="50%" x2="50%" y2="80%" class="hive-line"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Final Confrontation -->
+        <section class="confrontation-section" id="confrontationSection">
+            <h2 class="section-title glitch">CONFRONT VECNA</h2>
+            <p class="section-desc">Can you resist his psychic grip?</p>
+            
+            <div class="resistance-game" id="resistanceGame">
+                <div class="vecna-face" id="vecnaFace"></div>
+                <p class="game-instruction">Hold the button to resist Vecna's curse!</p>
+                <button class="resist-btn" id="resistBtn">RESIST</button>
+                <div class="resistance-bar">
+                    <div class="resistance-fill" id="resistanceFill"></div>
+                </div>
+                <p class="game-result" id="gameResult"></p>
+            </div>
+        </section>
+
+        <!-- Exit -->
+        <div class="exit-section">
+            <a href="menu.html" class="escape-btn" id="escapeBtn">← Escape to Safety</a>
+        </div>
+    </div>
+
+    <!-- Audio toggle -->
+    <button id="audio-toggle" class="audio-toggle" aria-label="Toggle sound">🔊</button>
+
+    <script src="vecna-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+/* Stranger Things Font */
+@font-face {
+    font-family: 'Benguiat';
+    src: url('https://fontsfree.net//wp-content/fonts/basic/sans-serif/FontsFree-Net-SFDistantGalaxy.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Alternative - using a web-safe bold font that mimics the style */
+.stranger-title {
+    font-family: 'ITC Benguiat Std', 'Benguiat', serif;
+    font-weight: bold;
+    font-style: normal;
+}

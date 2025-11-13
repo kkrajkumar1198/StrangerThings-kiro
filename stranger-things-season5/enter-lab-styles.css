@@ -1,0 +1,227 @@
+@import url('lab-styles.css');
+
+body {
+    background: linear-gradient(180deg, #0a1a0a 0%, #1a2e1a 50%, #0a1a0a 100%);
+}
+
+.lab-entrance {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.entrance-title {
+    font-family: 'Benguiat', 'Bookman Old Style', 'Georgia', serif;
+    font-size: 4rem;
+    color: #00ff00;
+    text-transform: uppercase;
+    text-shadow: 0 0 30px rgba(0, 255, 0, 0.8);
+    margin-bottom: 0.5rem;
+}
+
+.entrance-subtitle {
+    font-size: 1.2rem;
+    color: rgba(0, 255, 0, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    margin-bottom: 3rem;
+}
+
+.puzzle-container {
+    background: rgba(0, 255, 0, 0.05);
+    border: 2px solid rgba(0, 255, 0, 0.3);
+    padding: 3rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+}
+
+.puzzle-header {
+    margin-bottom: 2rem;
+}
+
+.puzzle-progress {
+    font-size: 1.2rem;
+    color: rgba(0, 255, 0, 0.9);
+    margin-bottom: 1rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.wrong-count {
+    font-size: 1rem;
+    color: rgba(255, 170, 0, 0.9);
+    font-family: 'Courier New', monospace;
+}
+
+.wrong-count span {
+    font-weight: bold;
+    color: #ffaa00;
+}
+
+.timer {
+    font-size: 1.2rem;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+@keyframes timer-pulse {
+    0%, 100% { 
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% { 
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+}
+
+.puzzle-hint {
+    font-size: 1.3rem;
+    color: #00ff00;
+    margin-bottom: 0.5rem;
+    font-family: 'Courier New', monospace;
+}
+
+.puzzle-subhint {
+    font-size: 0.9rem;
+    color: rgba(0, 255, 0, 0.6);
+    margin-bottom: 2rem;
+    font-family: 'Courier New', monospace;
+}
+
+.patterns-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.pattern-card {
+    background: rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(0, 255, 0, 0.4);
+    padding: 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pattern-card:hover {
+    border-color: #00ff00;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+.pattern-content {
+    font-size: 1.5rem;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+.pattern-card.correct {
+    border-color: #00ff00;
+    background: rgba(0, 255, 0, 0.2);
+    animation: correct-flash 0.5s;
+}
+
+.pattern-card.wrong {
+    border-color: #ff4444;
+    background: rgba(255, 0, 0, 0.2);
+    animation: shake 0.5s;
+}
+
+@keyframes correct-flash {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(0, 255, 0, 1);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.status-message {
+    font-size: 1.2rem;
+    color: #00ff00;
+    min-height: 30px;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 1rem;
+}
+
+.status-message.error {
+    color: #ff4444;
+}
+
+.status-message.success {
+    color: #00ff00;
+}
+
+.next-btn {
+    padding: 1rem 2rem;
+    background: rgba(0, 255, 0, 0.3);
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.next-btn:hover {
+    background: rgba(0, 255, 0, 0.5);
+    transform: scale(1.05);
+}
+
+.back-button {
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .entrance-title {
+        font-size: 2.5rem;
+    }
+    
+    .patterns-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .stats-row {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    
+    .puzzle-container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .pattern-content {
+        font-size: 1.2rem;
+    }
+}

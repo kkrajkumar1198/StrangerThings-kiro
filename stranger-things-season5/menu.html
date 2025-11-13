@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stranger Things | Choose Your Path</title>
+    <link rel="stylesheet" href="menu-styles.css">
+</head>
+<body>
+    <div class="menu-container">
+        <!-- Section 1: Hawkins Laboratory -->
+        <section class="menu-section lab-section" data-link="laboratory.html">
+            <div class="section-content">
+                <div class="section-icon lab-icon"></div>
+                <h2 class="section-title">HAWKINS LABORATORY</h2>
+                <p class="section-subtitle">Explore the secret facility</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Upside Down -->
+        <section class="menu-section upside-section" data-link="upside-down.html">
+            <div class="section-content">
+                <div class="section-icon upside-icon"></div>
+                <h2 class="section-title">UPSIDE DOWN</h2>
+                <p class="section-subtitle">Enter the dark dimension</p>
+            </div>
+        </section>
+
+        <!-- Section 3: Will's Home -->
+        <section class="menu-section home-section" data-link="wills-home.html">
+            <div class="section-content">
+                <div class="section-icon home-icon"></div>
+                <h2 class="section-title">WILL'S HOME</h2>
+                <p class="section-subtitle">Visit the Byers residence</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Vecna's Domain -->
+        <section class="menu-section vecna-section" data-link="vecna.html">
+            <div class="section-content">
+                <div class="section-icon vecna-icon"></div>
+                <h2 class="section-title">VECNA'S DOMAIN</h2>
+                <p class="section-subtitle">Face the ultimate horror</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Audio toggle button -->
+    <button id="audio-toggle" class="audio-toggle" aria-label="Toggle sound">
+        🔊
+    </button>
+
+    <!-- Background audio -->
+    <audio id="bg-audio" autoplay loop>
+        <source src="Stranger%20Things.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="menu-script.js"></script>
+</body>
+</html>
